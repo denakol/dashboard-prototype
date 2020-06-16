@@ -16,7 +16,7 @@ export default () => {
         <UserContext.Consumer>
             {({isInit, user}) => {
                 if (!isInit) {
-                    return <div>Loading</div>
+                    return <div/>
                 } else if (isNotNull(user)) {
                     return <PrivateRoutes user={user}/>
                 } else {
