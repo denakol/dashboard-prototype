@@ -17,7 +17,7 @@ class UserProvider extends Component {
         isInit: false
     };
 
-    componentDidMount = () => {
+    componentDidMount() {
         firebaseAuth().onAuthStateChanged(user => {
             user
                 ? this.setState(() => ({user, isInit: true}))
