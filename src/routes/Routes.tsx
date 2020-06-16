@@ -7,17 +7,13 @@ import {
 import {PrivateRoutes} from "./privateRoutes/PrivateRoutes";
 import {PublicRoutes} from "./publicRoutes/PublicRoutes";
 
-function isNotNull<T> (arg: T): arg is Exclude<T, null> {
-    return arg !== null
-}
-
 export default () => {
     return <Router>
         <UserContext.Consumer>
             {({isInit, user}) => {
                 if (!isInit) {
                     return <div/>
-                } else if (isNotNull(user)) {
+                } else if (user !== null) {
                     return <PrivateRoutes user={user}/>
                 } else {
                     return <PublicRoutes/>
