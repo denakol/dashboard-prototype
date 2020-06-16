@@ -1,0 +1,7 @@
+.card {
+    width: 400px;
+}
+.buttonBlock{
+    display: flex;
+    justify-content: space-between;
+}

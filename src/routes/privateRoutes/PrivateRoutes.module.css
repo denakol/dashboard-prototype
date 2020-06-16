@@ -1,0 +1,17 @@
+.container {
+    height: 100%;
+}
+
+.sider {
+    padding-top: 24px;
+    background-color: #ffffff;
+}
+
+.siderMenu {
+    height: 100%;
+    border-right: 0
+}
+
+.contentLayout {
+    padding: 24px;
+}
