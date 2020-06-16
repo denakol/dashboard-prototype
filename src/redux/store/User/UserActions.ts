@@ -1,8 +1,7 @@
 import {
     GET_USERS_DONE,
     GET_USERS_FAILURE,
-    GET_USERS_START,
-    UserActionTypes
+    GET_USERS_START
 } from "./types";
 
 import axios from "axios";
@@ -28,22 +27,24 @@ export const getUsers = () => {
     };
 };
 
-export function getUsersStart(): UserActionTypes {
+export function getUsersStart() {
     return {
         type: GET_USERS_START
-    }
+    } as const
 }
 
-export function getUsersDone(users: IUser[]): UserActionTypes {
+export function getUsersDone(users: IUser[]) {
     return {
         type: GET_USERS_DONE,
         payload: users
-    }
+    } as const
 }
 
-export function getUsersFailure(error: string): UserActionTypes {
+export function getUsersFailure(error: string) {
     return {
         type: GET_USERS_FAILURE,
         payload: error
-    }
+    } as const
 }
+
+export type UserAction = ReturnType<typeof getUsersStart | typeof getUsersDone | typeof getUsersFailure>

@@ -2,15 +2,13 @@ import {
     GET_USERS_DONE,
     GET_USERS_FAILURE,
     GET_USERS_START,
-    GetUsersDone, GetUsersFailure,
-    GetUsersStart,
-    UserActionTypes
 } from "./types";
 import {getInitialState, UserStore} from "./UserStore";
+import {getUsersDone, getUsersFailure, getUsersStart, UserAction} from "./UserActions";
 
 const initialState = getInitialState()
 
-const getUsersStartHandler = (state: UserStore, action: GetUsersStart) => {
+const getUsersStartHandler = (state: UserStore, action: ReturnType<typeof getUsersStart>) => {
 
     return {
         ...state,
@@ -23,7 +21,7 @@ const getUsersStartHandler = (state: UserStore, action: GetUsersStart) => {
     }
 }
 
-const getUsersDoneHandler = (state: UserStore, action: GetUsersDone) => {
+const getUsersDoneHandler = (state: UserStore, action: ReturnType<typeof getUsersDone>) => {
     return {
         ...state,
         users: action.payload,
@@ -34,7 +32,7 @@ const getUsersDoneHandler = (state: UserStore, action: GetUsersDone) => {
         }
     }
 }
-const getUsersFailureHandler = (state: UserStore, action: GetUsersFailure) => {
+const getUsersFailureHandler = (state: UserStore, action: ReturnType<typeof getUsersFailure>) => {
     return {
         ...state,
         usersStatus: {
@@ -45,7 +43,7 @@ const getUsersFailureHandler = (state: UserStore, action: GetUsersFailure) => {
     }
 }
 
-export default function userReducer(state = initialState, action: UserActionTypes) {
+export default function userReducer(state = initialState, action: UserAction) {
     switch (action.type) {
         case GET_USERS_START :
             return getUsersStartHandler(state, action)

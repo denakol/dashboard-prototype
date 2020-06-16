@@ -2,16 +2,13 @@ import {getInitialState, IPostStore} from "./IPostStore";
 import {
     GET_POSTS_DONE,
     GET_POSTS_FAILURE,
-    GET_POSTS_START,
-    GetPostsDone,
-    GetPostsFailure,
-    GetPostsStart,
-    PostActionTypes
+    GET_POSTS_START
 } from "./types";
+import {getPostsDone, getPostsFailure, getPostsStart, PostAction} from "./PostActions";
 
 const initialState = getInitialState()
 
-const getPostsStartHandler = (state: IPostStore, action: GetPostsStart) => {
+const getPostsStartHandler = (state: IPostStore, action: ReturnType<typeof getPostsStart>) => {
     return {
         ...state,
         posts: [],
@@ -23,7 +20,7 @@ const getPostsStartHandler = (state: IPostStore, action: GetPostsStart) => {
     }
 }
 
-const getPostsDoneHandler = (state: IPostStore, action: GetPostsDone) => {
+const getPostsDoneHandler = (state: IPostStore, action: ReturnType<typeof getPostsDone>) => {
     return {
         ...state,
         posts: action.payload,
@@ -34,7 +31,7 @@ const getPostsDoneHandler = (state: IPostStore, action: GetPostsDone) => {
         }
     }
 }
-const getPostsFailureHandler = (state: IPostStore, action: GetPostsFailure) => {
+const getPostsFailureHandler = (state: IPostStore, action: ReturnType<typeof getPostsFailure>) => {
     return {
         ...state,
         postsStatus: {
@@ -45,7 +42,7 @@ const getPostsFailureHandler = (state: IPostStore, action: GetPostsFailure) => {
     }
 }
 
-export default function userReducer(state = initialState, action: PostActionTypes) {
+export default function userReducer(state = initialState, action: PostAction) {
     switch (action.type) {
         case GET_POSTS_START :
             return getPostsStartHandler(state, action)
