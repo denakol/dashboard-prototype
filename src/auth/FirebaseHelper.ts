@@ -1,5 +1,5 @@
-import firebase from 'firebase/app';
-import 'firebase/auth';
+import firebase from "firebase/app";
+import "firebase/auth";
 import {firebaseConfig} from "./initFirebase";
 
 firebase.initializeApp(firebaseConfig);
@@ -22,10 +22,10 @@ export interface UserInfo extends  firebase.User {
 }
 
 export class FirebaseHelper {
-    static token = async () => {
+    static token =  () => {
         const user = FirebaseHelper.user()
         if (user) {
-            return await user.getIdToken();
+            return user.getIdToken();
         } else {
             return null;
         }

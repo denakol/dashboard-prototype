@@ -3,9 +3,9 @@ import {
     GET_USERS_FAILURE,
     GET_USERS_START,
     UserActionTypes
-} from './types';
+} from "./types";
 
-import axios from 'axios';
+import axios from "axios";
 import {User} from "../../interfaces/Model/User";
 import {Dispatch} from "react";
 

@@ -1,12 +1,11 @@
 import React from "react";
-import {Link, Redirect, Route, Switch} from "react-router-dom";
+import {Link, Redirect, Route, Switch, useLocation} from "react-router-dom";
 import {Dashboard} from "../../components/Dashboard/Dashboard";
 import {Settings} from "../../components/Settings/Settings";
 import {UserInfo} from "../../auth/FirebaseHelper";
 import NavBar from "../../components/Layout/NavBar";
-import {Layout, Menu} from 'antd';
+import {Layout, Menu} from "antd";
 import s from "./PrivateRoutes.module.css"
-import {useLocation} from "react-router-dom";
 
 const {Footer, Sider, Content} = Layout;
 
@@ -20,7 +19,7 @@ export const PrivateRoutes: React.FC<PrivateRouteProps> = ({user}) => {
     return <Layout className={s.container}>
         <NavBar user={user}/>
         <Layout>
-            <Sider className={s.sider} width={200} theme="light">
+            <Sider className={s.sider} theme="light">
                 <Menu
                     mode="inline"
                     selectedKeys={[location.pathname]}

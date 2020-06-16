@@ -6,7 +6,6 @@ import {Card, Spin} from "antd";
 import UserList from "./UserList";
 import {User} from "../../redux/interfaces/Model/User";
 import {selectUsers, selectUsersIsDone, selectUsersIsLoading} from "../../redux/store/User/selectors";
-import {selectPostsIsDone} from "../../redux/store/Post/selectors";
 
 export const Dashboard: React.FunctionComponent = () => {
     const dispatch = useDispatch()
