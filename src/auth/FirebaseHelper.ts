@@ -1,6 +1,6 @@
 import firebase from "firebase/app";
 import "firebase/auth";
-import {firebaseConfig} from "./initFirebase";
+import {firebaseConfig} from "./firebaseConfig";
 
 firebase.initializeApp(firebaseConfig);
 export const firebaseAuth = firebase.auth;
