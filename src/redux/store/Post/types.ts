@@ -1,4 +1,4 @@
-import {Post} from "../../interfaces/Model/Post";
+import {IPost} from "../../interfaces/Model/IPost";
 
 export const GET_POSTS_START = 'GET_POSTS_START'
 export const GET_POSTS_DONE = 'GET_POSTS_DONE'
@@ -10,7 +10,7 @@ export interface GetPostsStart {
 
 export interface GetPostsDone {
     type: typeof GET_POSTS_DONE,
-    payload: Post[]
+    payload: IPost[]
 }
 
 export interface GetPostsFailure {

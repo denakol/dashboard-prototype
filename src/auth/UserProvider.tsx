@@ -1,8 +1,8 @@
 import React, {Component, createContext} from "react";
-import {firebaseAuth, UserInfo} from "./FirebaseHelper"
+import {firebaseAuth, IUserInfo} from "./FirebaseHelper"
 
 interface IUserContext {
-    user: UserInfo | null,
+    user: IUserInfo | null,
     isInit: boolean
 }
 
@@ -20,8 +20,8 @@ export class UserProvider extends Component {
     componentDidMount() {
         firebaseAuth().onAuthStateChanged(user => {
             user
-                ? this.setState(() => ({user, isInit: true}))
-                : this.setState(() => ({user: null, isInit: true}))
+                ? this.setState({user, isInit: true})
+                : this.setState({user: null, isInit: true})
         })
     };
 

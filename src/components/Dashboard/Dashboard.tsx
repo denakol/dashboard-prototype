@@ -4,13 +4,13 @@ import {getUsers} from "../../redux/store/User/UserActions";
 import {IStore} from "../../redux/interfaces/interfaces";
 import {Card, Spin} from "antd";
 import UserList from "./UserList";
-import {User} from "../../redux/interfaces/Model/User";
+import {IUser} from "../../redux/interfaces/Model/IUser";
 import {selectUsers, selectUsersIsDone, selectUsersIsLoading} from "../../redux/store/User/selectors";
 
 export const Dashboard: React.FunctionComponent = () => {
     const dispatch = useDispatch()
 
-    const users = useSelector<IStore, User[]>(selectUsers)
+    const users = useSelector<IStore, IUser[] | null>(selectUsers)
     const isLoading = useSelector<IStore, boolean>(selectUsersIsLoading)
     const isDone = useSelector<IStore, boolean>(selectUsersIsDone)
 
@@ -20,6 +20,6 @@ export const Dashboard: React.FunctionComponent = () => {
 
     return <Card title="Dashboard">
         {isLoading && <Spin/>}
-        {isDone && <UserList users={users}/>}
+        {isDone && users && <UserList users={users}/>}
     </Card>
 }

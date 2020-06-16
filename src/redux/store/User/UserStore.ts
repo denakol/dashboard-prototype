@@ -1,14 +1,14 @@
-import {User} from "../../interfaces/Model/User";
-import {Status} from "../../interfaces/Status";
+import {IUser} from "../../interfaces/Model/IUser";
+import {IStatus} from "../../interfaces/IStatus";
 
 export interface UserStore {
-    users: User[],
-    usersStatus: Status
+    users: IUser[] | null,
+    usersStatus: IStatus
 }
 
 export const getInitialState = (): UserStore => {
     return {
-        users: [],
+        users: null,
         usersStatus: {
             isPending: false,
             isDone: false,

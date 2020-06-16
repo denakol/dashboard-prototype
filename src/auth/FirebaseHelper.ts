@@ -17,7 +17,7 @@ export type UserForm = {
     password: string
 }
 
-export interface UserInfo extends  firebase.User {
+export interface IUserInfo extends  firebase.User {
 
 }
 

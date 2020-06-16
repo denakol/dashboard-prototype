@@ -1,7 +1,7 @@
 import axios from 'axios';
 import {Dispatch} from "react";
 import {GET_POSTS_DONE, GET_POSTS_FAILURE, GET_POSTS_START, PostActionTypes} from "./types";
-import {Post} from "../../interfaces/Model/Post";
+import {IPost} from "../../interfaces/Model/IPost";
 
 export const getPosts = () => {
     return (dispatch: Dispatch<any>) => {
@@ -28,7 +28,7 @@ export function getPostsStart(): PostActionTypes {
     }
 }
 
-export function getPostsDone(posts: Post[]): PostActionTypes {
+export function getPostsDone(posts: IPost[]): PostActionTypes {
     return {
         type: GET_POSTS_DONE,
         payload: posts

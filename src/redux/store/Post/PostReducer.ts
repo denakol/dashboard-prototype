@@ -1,4 +1,4 @@
-import {getInitialState, PostStore} from "./PostStore";
+import {getInitialState, IPostStore} from "./IPostStore";
 import {
     GET_POSTS_DONE,
     GET_POSTS_FAILURE,
@@ -11,7 +11,7 @@ import {
 
 const initialState = getInitialState()
 
-const getPostsStartHandler = (state: PostStore, action: GetPostsStart) => {
+const getPostsStartHandler = (state: IPostStore, action: GetPostsStart) => {
     return {
         ...state,
         posts: [],
@@ -23,7 +23,7 @@ const getPostsStartHandler = (state: PostStore, action: GetPostsStart) => {
     }
 }
 
-const getPostsDoneHandler = (state: PostStore, action: GetPostsDone) => {
+const getPostsDoneHandler = (state: IPostStore, action: GetPostsDone) => {
     return {
         ...state,
         posts: action.payload,
@@ -34,7 +34,7 @@ const getPostsDoneHandler = (state: PostStore, action: GetPostsDone) => {
         }
     }
 }
-const getPostsFailureHandler = (state: PostStore, action: GetPostsFailure) => {
+const getPostsFailureHandler = (state: IPostStore, action: GetPostsFailure) => {
     return {
         ...state,
         postsStatus: {

@@ -1,4 +1,4 @@
-import {User} from "../../interfaces/Model/User";
+import {IUser} from "../../interfaces/Model/IUser";
 
 export const GET_USERS_START = 'GET_USERS_START'
 export const GET_USERS_DONE = 'GET_USERS_DONE'
@@ -10,7 +10,7 @@ export interface GetUsersStart {
 
 export interface GetUsersDone {
     type: typeof GET_USERS_DONE,
-    payload: User[]
+    payload: IUser[]
 }
 
 export interface GetUsersFailure {

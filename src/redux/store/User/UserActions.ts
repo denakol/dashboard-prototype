@@ -6,7 +6,7 @@ import {
 } from "./types";
 
 import axios from "axios";
-import {User} from "../../interfaces/Model/User";
+import {IUser} from "../../interfaces/Model/IUser";
 import {Dispatch} from "react";
 
 export const getUsers = () => {
@@ -34,7 +34,7 @@ export function getUsersStart(): UserActionTypes {
     }
 }
 
-export function getUsersDone(users: User[]): UserActionTypes {
+export function getUsersDone(users: IUser[]): UserActionTypes {
     return {
         type: GET_USERS_DONE,
         payload: users

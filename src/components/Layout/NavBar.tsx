@@ -1,13 +1,13 @@
 import React, {useCallback} from "react"
-import {FirebaseHelper, UserInfo} from "../../auth/FirebaseHelper";
+import {FirebaseHelper, IUserInfo} from "../../auth/FirebaseHelper";
 
 import s from "./Navbar.module.css"
 import {Button} from "antd";
 
-interface NavBarProps {
-    user: UserInfo
+interface INavBarProps {
+    user: IUserInfo
 }
-const NavBar: React.FC<NavBarProps> = ({user}) => {
+const NavBar: React.FC<INavBarProps> = ({user}) => {
     const logOut = useCallback(() => {
         FirebaseHelper.signOut()
     }, [])

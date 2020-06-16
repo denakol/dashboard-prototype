@@ -2,18 +2,18 @@ import React from "react";
 import {Link, Redirect, Route, Switch, useLocation} from "react-router-dom";
 import {Dashboard} from "../../components/Dashboard/Dashboard";
 import {Settings} from "../../components/Settings/Settings";
-import {UserInfo} from "../../auth/FirebaseHelper";
+import {IUserInfo} from "../../auth/FirebaseHelper";
 import NavBar from "../../components/Layout/NavBar";
 import {Layout, Menu} from "antd";
 import s from "./PrivateRoutes.module.css"
 
 const {Footer, Sider, Content} = Layout;
 
-interface PrivateRouteProps {
-    user: UserInfo
+interface IPrivateRouteProps {
+    user: IUserInfo
 }
 
-export const PrivateRoutes: React.FC<PrivateRouteProps> = ({user}) => {
+export const PrivateRoutes: React.FC<IPrivateRouteProps> = ({user}) => {
     const location = useLocation();
 
     return <Layout className={s.container}>
