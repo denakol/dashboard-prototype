@@ -11,7 +11,7 @@ export const UserContext = createContext<IUserContext>({
     isInit: false
 });
 
-class UserProvider extends Component {
+export class UserProvider extends Component {
     state = {
         user: null,
         isInit: false
@@ -33,5 +33,3 @@ class UserProvider extends Component {
         );
     }
 }
-
-export default UserProvider;
