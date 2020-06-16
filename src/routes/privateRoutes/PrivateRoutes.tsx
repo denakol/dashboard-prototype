@@ -16,37 +16,39 @@ interface IPrivateRouteProps {
 export const PrivateRoutes: React.FC<IPrivateRouteProps> = ({user}) => {
     const location = useLocation();
 
-    return <Layout className={s.container}>
-        <NavBar user={user}/>
-        <Layout>
-            <Sider className={s.sider} theme="light">
-                <Menu
-                    mode="inline"
-                    selectedKeys={[location.pathname]}
-                    className={s.siderMenu}
-                >
-                    <Menu.Item key="/dashboard">
-                        <Link to="/dashboard">Dashboard </Link>
-                    </Menu.Item>
-                    <Menu.Item key="/settings">
-                        <Link to="/settings">Settings </Link>
-                    </Menu.Item>
-                </Menu>
-            </Sider>
+    return (
+        <Layout className={s.container}>
+            <NavBar user={user}/>
             <Layout>
-                <Layout className={s.contentLayout}>
-                    <Content>
-                        <Switch>
-                            <Route path="/dashboard" component={Dashboard} exact/>
-                            <Route path="/settings" component={Settings}/>
-                            <Redirect to="/dashboard"/>
-                        </Switch>
-                    </Content>
+                <Sider className={s.sider} theme="light">
+                    <Menu
+                        mode="inline"
+                        selectedKeys={[location.pathname]}
+                        className={s.siderMenu}
+                    >
+                        <Menu.Item key="/dashboard">
+                            <Link to="/dashboard">Dashboard </Link>
+                        </Menu.Item>
+                        <Menu.Item key="/settings">
+                            <Link to="/settings">Settings </Link>
+                        </Menu.Item>
+                    </Menu>
+                </Sider>
+                <Layout>
+                    <Layout className={s.contentLayout}>
+                        <Content>
+                            <Switch>
+                                <Route path="/dashboard" component={Dashboard} exact/>
+                                <Route path="/settings" component={Settings}/>
+                                <Redirect to="/dashboard"/>
+                            </Switch>
+                        </Content>
+                    </Layout>
+                    <Footer>denakol08@gmail.com</Footer>
                 </Layout>
-                <Footer>denakol08@gmail.com</Footer>
+
             </Layout>
 
         </Layout>
-
-    </Layout>
+    )
 }

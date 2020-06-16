@@ -7,8 +7,10 @@ interface IUserProps {
 }
 
 const UserList: React.FC<IUserProps> = ({users}) => {
-    return <div>
-        {users.map(user => <UserItem user={user}  key={user.id} />)}
-    </div>
+    return (
+        <div>
+            {users.map(user => <UserItem user={user} key={user.id}/>)}
+        </div>
+    )
 }
 export default React.memo(UserList)

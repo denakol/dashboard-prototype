@@ -14,8 +14,10 @@ export const Settings: React.FC = () => {
     useEffect(() => {
         dispatch(getPosts())
     }, [dispatch])
-    return <Card title="Settings">
-        {isLoading && <Spin/>}
-        {isDone && <div>Loaded</div>}
-    </Card>
+    return (
+        <Card title="Settings">
+            {isLoading && <Spin/>}
+            {isDone && <div>Loaded</div>}
+        </Card>
+    )
 }

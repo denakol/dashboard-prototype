@@ -6,9 +6,11 @@ interface IUserProps {
 }
 
 const UserItem: React.FC<IUserProps> = ({user}) => {
-    return <div>
-        {user.email}
-    </div>
+    return (
+        <div>
+            {user.email}
+        </div>
+    )
 }
 
 export default React.memo(UserItem)

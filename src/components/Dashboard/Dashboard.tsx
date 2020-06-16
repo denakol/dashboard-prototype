@@ -18,8 +18,10 @@ export const Dashboard: React.FunctionComponent = () => {
         dispatch(getUsers())
     }, [dispatch])
 
-    return <Card title="Dashboard">
-        {isLoading && <Spin/>}
-        {isDone && users && <UserList users={users}/>}
-    </Card>
+    return (
+        <Card title="Dashboard">
+            {isLoading && <Spin/>}
+            {isDone && users && <UserList users={users}/>}
+        </Card>
+    )
 }

@@ -8,18 +8,20 @@ import {PrivateRoutes} from "./privateRoutes/PrivateRoutes";
 import {PublicRoutes} from "./publicRoutes/PublicRoutes";
 
 export default () => {
-    return <Router>
-        <UserContext.Consumer>
-            {({isInit, user}) => {
-                if (!isInit) {
-                    return <div/>
-                } else if (user !== null) {
-                    return <PrivateRoutes user={user}/>
-                } else {
-                    return <PublicRoutes/>
+    return (
+        <Router>
+            <UserContext.Consumer>
+                {({isInit, user}) => {
+                    if (!isInit) {
+                        return <div/>
+                    } else if (user !== null) {
+                        return <PrivateRoutes user={user}/>
+                    } else {
+                        return <PublicRoutes/>
+                    }
                 }
-            }
-            }
-        </UserContext.Consumer>
-    </Router>
+                }
+            </UserContext.Consumer>
+        </Router>
+    )
 }
