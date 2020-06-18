@@ -1,7 +1,7 @@
-import {UserStore} from "../store/User/UserStore";
-import {IPostStore} from "../store/Post/IPostStore";
+import {UserSlice} from "../store/User/UserSlice";
+import {PostSlice} from "../store/Post/PostSlice";
 
 export interface IStore {
-    user: UserStore,
-    post: IPostStore
+    user: UserSlice,
+    post: PostSlice
 }

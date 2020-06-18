@@ -1,7 +1,7 @@
 import {combineReducers} from "redux";
 import {IStore} from "../interfaces/interfaces";
-import {getInitialState as GetUserInitialState} from "./User/UserStore";
-import {getInitialState as GetPostInitialState} from "./Post/IPostStore";
+import {getInitialState as GetUserInitialState} from "./User/UserSlice";
+import {getInitialState as GetPostInitialState} from "./Post/PostSlice";
 import UserReducer from "./User/UserReducer";
 import PostReducer from "./Post/PostReducer";
 
