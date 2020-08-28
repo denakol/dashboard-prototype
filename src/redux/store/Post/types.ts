@@ -1,5 +1,3 @@
-
 export const GET_POSTS_START = 'GET_POSTS_START'
 export const GET_POSTS_DONE = 'GET_POSTS_DONE'
 export const GET_POSTS_FAILURE = 'GET_POSTS_FAILURE'
-
