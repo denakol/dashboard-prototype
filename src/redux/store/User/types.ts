@@ -1,4 +1,3 @@
 export const GET_USERS_START = 'GET_USERS_START'
 export const GET_USERS_DONE = 'GET_USERS_DONE'
 export const GET_USERS_FAILURE = 'GET_USERS_FAILURE'
-
